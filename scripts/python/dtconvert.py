@@ -1,5 +1,5 @@
-import datetime
 #!/usr/bin/env python
+import datetime
 import argparse
 
 parser = argparse.ArgumentParser()
