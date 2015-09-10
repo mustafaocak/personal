@@ -1,0 +1,6 @@
+import datetime
+import argparse
+d = datetime.date
+print (d.today()- d(1970,1,1))
+
+
