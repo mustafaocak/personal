@@ -3,8 +3,13 @@
 BULLET="==>"
 
 echo -e "${BULLET} Updating /etc/hosts"
-echo "192.168.33.10   ansmgmt.muo.no   muo" >> /etc/hosts
+cat >> /etc/hosts <<EOL
+# vagrant environment nodes
+192.168.33.10  ansmgmt
+192.168.33.11  web1
+192.168.33.12  web2
 
+EOL
 #echo -e "${BULLET} Installing logstash yum repo"
 #rpm --import https://packages.elasticsearch.org/GPG-KEY-elasticsearch
 
@@ -24,6 +29,8 @@ sudo yum -y update
 sudo yum -y install vim wget kernel-devel gcc
 sudo yum -y upgrade
 
+echo -e "${BULLET} Installing vim wget kernel-devel gcc"
+sudo yum -y install ansible 
 #echo -e "${BULLET} Installing guest additions"
 #cd /tmp
 #url="http://download.virtualbox.org/virtualbox/5.0.20/VBoxGuestAdditions_5.0.20.iso"
